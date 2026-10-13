@@ -2,7 +2,11 @@
 
 An original browser parser adventure in fictional Tamarack Lakes, Minnesota. Twelve indoor locations plus the opening mailbox scene, six interlocking support puzzles, and an evidence-based engineering handoff. No dependencies, accounts, external assets, or live AI.
 
-## Launch
+## Easiest launch — no installation
+
+Download this repository with GitHub’s **Code → Download ZIP**, extract the ZIP, then double-click **PLAY.html**. It contains the entire game and opens directly in your browser. No terminal, Python, Node, internet connection, or accounts are needed to play. Keep PLAY.html in the same location for consistent browser saves.
+
+## Development launch
 
 From `/workspace/test`, run `npm start` (or `python3 -m http.server 8000 --bind 0.0.0.0`). Open the served site in your browser. ES modules require serving over HTTP rather than opening index.html directly. Node 18+ runs the engine tests; Python 3 serves the app.
 
