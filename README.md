@@ -6,27 +6,9 @@ An original browser parser adventure in fictional Tamarack Lakes, Minnesota. Twe
 
 Download this repository with GitHub’s **Code → Download ZIP**, extract the ZIP, then double-click **PLAY.html**. It contains the entire game and opens directly in your browser. No terminal, Python, Node, internet connection, or accounts are needed to play. Keep PLAY.html in the same location for consistent browser saves.
 
-## Run with Node.js
+## Development launch
 
-1. Install Node.js 24 LTS from https://nodejs.org/.
-2. Download and extract the repository ZIP.
-3. Open a terminal in the extracted folder (the one containing package.json).
-4. Run `npm start`.
-5. On your own computer, open `http://localhost:8000` in your browser. Keep the terminal open while playing. Press Ctrl+C to stop.
-
-There are no packages to install and Python is not required. Node 22 or newer is supported. `npm run dev` automatically restarts the server when its source changes. `npm test` runs the engine and HTTP-server tests. The server supports a hosting provider's `PORT` environment variable and binds to `0.0.0.0`. Asset paths are resolved relative to the server file, so it can also be launched from another directory with `node /path/to/server.js`.
-
-## Put the Node version online
-
-GitHub stores the code; a Node-capable web host runs the server. On Render (https://render.com/):
-
-1. Sign in and choose **New → Web Service**.
-2. Connect this GitHub repository, `woodsdana-ctrl/test`, and select branch **main**.
-3. Choose the Node runtime, set the build command to `npm test`, and the start command to `npm start`.
-4. Choose an available plan after reviewing its price and create the service.
-5. Wait for deployment to finish, then open the address Render provides. Share that address with players.
-
-Use Node 24 (for example, set the host's `NODE_VERSION` environment variable to `24`). No secrets or database are needed. The health-check path is `/health`. This repository update does not create or deploy a hosting account. GitHub Pages can still serve the browser files, but it cannot run the Node server.
+From `/workspace/test`, run `npm start` (or `python3 -m http.server 8000 --bind 0.0.0.0`). Open the served site in your browser. ES modules require serving over HTTP rather than opening index.html directly. Node 18+ runs the engine tests; Python 3 serves the app.
 
 Type commands in the terminal. Enter executes; up/down recalls history. Compass directions accept N/S/E/W/U/D. HELP lists commands and HINT provides three progressive hints per puzzle. Inventory, map, objectives, and journal update automatically. The deadline and battery never count down. Required objects can be dropped and retrieved. Click map exits to travel or inventory “inspect” buttons to examine items.
 
@@ -36,7 +18,6 @@ Run `npm test` for engine validation. The complete spoiler walkthrough is in `SP
 
 ## Files
 
-- `server.js`: dependency-free Node HTTP server, public asset allowlist, health check and hosting port support.
 - `engine.js`: deterministic state, world/items, parser, prerequisites, hints, objectives and save validation.
 - `app.js`: accessible transcript, controls, history, panels and local persistence.
 - `index.html` / `style.css`: responsive terminal interface.
